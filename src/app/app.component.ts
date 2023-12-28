@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { Todo } from '../models/todo.model.ts/todo.model';
 
 @Component({
   selector: 'app-root',
@@ -10,5 +11,19 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'todo';
+  public todos: Todo[] = [];
+  public title: string = 'Minhas tarefas';
+
+  /**
+   *
+   */
+  constructor() {
+    this.todos.push(new Todo(1, 'Passear com o cachorro', false));
+    this.todos.push(new Todo(2, 'Ir ao mercado', false));
+    this.todos.push(new Todo(3, 'cortar o cabelo', true));
+  }
+
+  alterarTexto(){
+    this.title = 'Teste';
+  }
 }
