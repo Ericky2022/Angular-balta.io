@@ -1,4 +1,4 @@
-<h1> {{ title }} </h1>
+<h1 class="title"> {{ title }} </h1>
 
 
 <ul>
@@ -16,5 +16,5 @@
       <input type="text" placeholder="Título da Tarefa"
       maxlength="60" formControlName="title">
       <small *ngIf="form.controls.title.invalid && !form.controls.title.pristine" >Este campodeve conter entre 3 e 60 carateres</small>
-      <button [disabled]="form.invalid" (click)="add( )">Salvar</button>
+      <button class="button" [disabled]="form.invalid" (click)="add( )">Salvar</button>
 </form>
